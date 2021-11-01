@@ -10,7 +10,12 @@ namespace Musica.Core
 
         public Album()
         {
-            Productos = new List<Producto>();
+            Canciones = new List<Cancion>();
         }
+
+        public void AgregarCancion(Cancion cancion)
+            => Canciones.Add(cancion);
+        public void EliminarCancion(Cancion cancion)
+            => Cancion.Remove(cancion);
     }
 }
