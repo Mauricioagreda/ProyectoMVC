@@ -6,8 +6,12 @@ namespace Musica.Core
     {
         public int Id { get; set; } 
         public string Nombre { get; set; }
-        public List<Cancion> Canciones { get; set; }
+        public Album Album {get; set;} 
 
+        public Cancion(string nombre)
+        {
+            Nombre = nombre;
+        }
         
     }
 }
