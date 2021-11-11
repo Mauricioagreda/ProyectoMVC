@@ -27,6 +27,16 @@ namespace ProyectoMVC.Controllers
             return View(vmAlbum);
         }
 
-        
+        [HttpPost]
+        public IActionResult FormAlta(VMAlbum vMAlbum)
+        {
+            if (Validar(vMAlbum))
+            {
+                var artista = Repositorio.GetArtista(vMAlbum.IdArtistaSeleccionado.Value);
+                artista.AgregarAlbum(vMAlbum.album);
+                Repositorio.AgregarAlbum(vMAlbum.Album);
+            }
+            return View("Index", Repositorio.Albumes);
+        }
     }
 }

@@ -1,0 +1,29 @@
+@model IEnumerable<ProyectoMVC.Core.Artista> 
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Artistas</title>
+</head>
+<body>
+    <a asp-action="FormAlta">Alta Artistas</a><br/>
+    <h5>Artistas</h5>
+    <table>
+        <thead>
+            <tr><td>Nombre</td> 
+        </thead>
+        <tbody>
+            @foreach (ProyectoMVC.Core.Artista artista in Model)
+            {
+                <tr>
+                    <td>
+                        <a asp-controller="Artista" asp-action="Detalle" asp-route-id="@artista.Id">@artista.Nombre</a> 
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

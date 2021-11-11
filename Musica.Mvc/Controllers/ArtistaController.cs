@@ -18,36 +18,6 @@ namespace ProyectoMVC.Controllers
             return View("Index", Repositorio.Artistas);
         }
 
-        [HttpPost]
-        public IActionResult Eliminar(int id)
-        {
-            var artista = Repositorio.GetArtista(id);
-            if (artista is null)
-            {
-                return NotFound();
-            }
-            Repositorio.EliminarArtista(artista);
-            return View("Index", Repositorio.Artistas);
-        }
-
-        [HttpGet]
-        public IActionResult Modificar(int id)
-        {
-            var artista = Repositorio.GetArtista(id);
-            if (artista is null)
-            {
-                return NotFound();
-            }
-            return View(artista);
-        }
-
-        [HttpPost]
-        public IActionResult Modificar(Artista artista)
-        {
-            Artista.ActualizarArtista(artista);
-            return View("Index", Repositorio.Artistas);
-        }
-
         [HttpGet]
         public IActionResult Detalle(int id)
         {

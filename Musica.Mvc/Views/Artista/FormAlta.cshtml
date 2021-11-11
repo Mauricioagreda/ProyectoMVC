@@ -1,0 +1,20 @@
+@model ProyectoMVC.Core.Artista
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Artistas</title>
+</head>
+<body>
+    <form asp-action="FormAlta" method="post">
+        <div asp-validation-summary="All"></div>
+        <div>
+            <label asp-for="Nombre">Nombre:</label>
+            <input asp-for="Nombre" />
+        </div>
+        <button type="submit">Alta Artista</button>
+    </form>
+</body>
+</html>

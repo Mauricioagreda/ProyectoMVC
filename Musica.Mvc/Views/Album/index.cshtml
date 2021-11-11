@@ -1,0 +1,29 @@
+@model IEnumerable<ProyectoMVC.Core.Album> 
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Albumes</title>
+</head>
+<body>
+    <a asp-action="FormAlta">Alta Albumes</a><br/>
+    <h5>Albumes</h5>
+    <table>
+        <thead>
+            <tr><td>Nombre</td> 
+        </thead>
+        <tbody>
+            @foreach (ProyectoMVC.Core.Album album in Model)
+            {
+                <tr>
+                    <td>
+                        <a asp-controller="Album" asp-action="Detalle" asp-route-id="@album.Id">@album.Nombre</a> 
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

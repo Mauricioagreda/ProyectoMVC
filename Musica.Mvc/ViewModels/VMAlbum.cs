@@ -1,32 +1,20 @@
 using SuperSimple.Core;
 using System.Collections.Generic;
 
-namespace SuperSimple.ViewModels
+namespace ProyectoMVC.ViewModels
 {
-    // Esta clase es una contenedora 
-    public class VMProducto
+    public class VMAlbum
     {
-        public IEnumerable<Categoria> Categorias { get; set; }
-        public Producto Producto { get; set; }
-        public float PrecioNuevo { get; set; }
-        public int? IdCategoriaSeleccionado { get; set; }
-        public VMProducto() => Producto = new Producto();
-        public VMProducto(IEnumerable<Categoria> categorias) : this()
-            => Categorias = categorias;
-        public VMProducto(Producto producto)
+        public IEnumerable<Artista> Artistas { get; set; }
+        public Album Album { get; set; }
+        public int? IdArtistaSeleccionado { get; set; }
+
+        public VMAlbum() => Album = new Album();
+        public VMAlbum(IEnumerable<Artista> artistas) : this() => Artistas = artistas;
+
+        public VMAlbum(Album album)
         {
-            Producto = producto;            
-        }
-        //Este método podria estar en otra casa que se suele llamar como "capa de servicio"
-        //Ej: https://qastack.mx/programming/14887871/creating-a-service-layer-for-my-mvc-application
-        internal void Actualizar(Producto producto)
-        {
-            producto.Nombre = Producto.Nombre;
-            if (producto.PrecioUnitario!=PrecioNuevo)
-            {
-                producto.CambiarPrecio(PrecioNuevo);
-            }
-            producto.Cantidad = Producto.Cantidad;
+            Album = album;            
         }
     }
 }
