@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Musica.Core
 {
@@ -14,9 +15,7 @@ namespace Musica.Core
             Canciones = new List<Cancion>();
         }
 
-        public void AgregarCancion(Cancion cancion)
-            => Canciones.Add(cancion);
-        public void EliminarCancion(Cancion cancion)
-            => Cancion.Remove(cancion);
+        public void AgregarCancion(Cancion cancion) => Canciones.Add(cancion);
+        //public void EliminarCancion(Cancion cancion) => Cancion.Remove(cancion);
     }
 }

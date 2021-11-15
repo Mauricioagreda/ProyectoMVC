@@ -25,8 +25,8 @@ namespace Musica.Core
         {
             album.Id = idAlbum++;
         }
-        public static IEnumerable<Album> album => artistas.SelectMany(c => c.albumes);
-        public static IEnumerable<Producto> AlbumesDe(int idArtista)
+        //public static IEnumerable<Album> album => artistas.SelectMany(c => c.albumes);
+        public static IEnumerable<Album> AlbumesDe(int idArtista)
         {
             var artista = GetArtista(idArtista);
             if (artista is null)
@@ -42,7 +42,7 @@ namespace Musica.Core
         {
             cancion.Id = idCancion++;
         }
-        public static IEnumerable<Cancion> Canciones => albumes.SelectMany(c => c.Canciones);
+        //public static IEnumerable<Cancion> Canciones => albumes.SelectMany(c => c.Canciones);
         public static IEnumerable<Cancion> CancionDe(int idAlbum)
         {
             var album = GetAlbum(idAlbum);

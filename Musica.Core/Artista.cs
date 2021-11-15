@@ -14,9 +14,7 @@ namespace Musica.Core
             Albumes = new List<Album>();
         }
 
-        public void AgregarAlbum(Album album)
-            => Albumes.Add(producto);
-        public void EliminarAlbum(Album album)
-            => Albumes.Remove(album);
+        public void AgregarAlbum(Album album) => Albumes.Add(album);
+        public void EliminarAlbum(Album album) => Albumes.Remove(album);
     }
 }
