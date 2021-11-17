@@ -11,6 +11,8 @@ namespace Musica.Core
 
         static readonly List<Artista> artistas = new List<Artista>();
         public static IEnumerable<Artista> Artistas => artistas;
+        static readonly List<Album> albumes = new List<Album>();
+        public static IEnumerable<Album> Albumes => albumes;
         public static Artista GetArtista(int id) => artistas.Find(c => c.Id == id);
         public static void AgregarArtistas(Artista artista)
         {
@@ -33,7 +35,7 @@ namespace Musica.Core
             {
                 return null;
             }
-            return artista.Album;
+            return artista.Albumes;
         }
         public static Album GetAlbum(int id) => Albumes.First(p => p.Id == id);
         
